@@ -53,6 +53,10 @@ public class Main {
 					}
 				
 					break;
+					
+				case 4:
+					System.out.println("Salir");
+					break;
 			}
 		}while(opcion!=4);
 	}
