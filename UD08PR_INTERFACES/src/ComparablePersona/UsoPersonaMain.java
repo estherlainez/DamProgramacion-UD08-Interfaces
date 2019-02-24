@@ -33,6 +33,7 @@ public class UsoPersonaMain {
 			System.out.println("8.Ordenar a las personas por peso");
 			System.out.println("9.Ordenar a las personas por altura");
 			System.out.println("10.Ordenar a las personas por Dni ");
+			System.out.println("11.Salir ");
 			opcion=teclado.nextInt();
 			
 			switch(opcion) {
@@ -151,6 +152,9 @@ public class UsoPersonaMain {
 				for(Persona p:arrayPersona) {
 					System.out.println(p.toString());
 				}
+				break;
+			case 11:
+				System.out.println("Salir");
 				break;
 				
 			}
