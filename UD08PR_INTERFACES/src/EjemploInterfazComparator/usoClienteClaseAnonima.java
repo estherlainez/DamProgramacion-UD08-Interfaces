@@ -22,7 +22,7 @@ public class usoClienteClaseAnonima {
 		//LLAMAMOS AL METODO SORT QUE SOS OBLIGA 
 		//A IMPLEMENTAR LA INTERFAZ COMPARABLE
 		System.out.println("Por Dni" + Arrays.toString(misClientes));
-	
+		System.out.println("Por Nombre" + Arrays.toString(misClientes));
 		Arrays.sort(misClientes,  new Comparator() {
 			public int compare(Object o1, Object o2) {
 				Cliente c1=(Cliente)o1;
@@ -39,7 +39,7 @@ public class usoClienteClaseAnonima {
 			return ((Cliente) o1).edad - ((Cliente) o2).edad;
 		}
 		});
-		System.out.println("Por Nombre" + Arrays.toString(misClientes));
+		
 		
 	}
 
