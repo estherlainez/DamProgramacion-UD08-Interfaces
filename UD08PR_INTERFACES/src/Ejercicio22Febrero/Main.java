@@ -1,8 +1,5 @@
 package Ejercicio22Febrero;
 import java.util.Scanner;
-
-import EjemploInterfazComparator.Cliente;
-
 import java.util.Arrays;
 import java.util.Comparator;
 public class Main {
