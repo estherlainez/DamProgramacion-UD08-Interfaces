@@ -1,7 +1,9 @@
 package ComparablePersona;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
+import EjemploInterfazComparator.Cliente;
 
 public class UsoPersonaMain {
 
@@ -33,6 +35,7 @@ public class UsoPersonaMain {
 			System.out.println("8.Ordenar a las personas por peso");
 			System.out.println("9.Ordenar a las personas por altura");
 			System.out.println("10.Ordenar a las personas por Dni ");
+			System.out.println("   Para tomar esta opcion sera necesaria primero la opcion 5");
 			System.out.println("11.Salir ");
 			opcion=teclado.nextInt();
 			
@@ -124,6 +127,15 @@ public class UsoPersonaMain {
 					System.out.println(p.toString());
 				}
 				
+				System.out.println("Por Nombre" + Arrays.toString(arrayPersona));			
+				//hecho con la clase anonima
+				Arrays.sort(arrayPersona,  new Comparator() {
+					public int compare(Object o1, Object o2) {
+						Persona p1=(Persona)o1;
+						Persona p2=(Persona)o2;
+						return p1.nombre.compareTo(p2.nombre);
+					}
+				});
 				break;
 				
 			case 8:
@@ -134,6 +146,13 @@ public class UsoPersonaMain {
 					System.out.println(p.toString());
 				}
 				
+				System.out.println("Por Peso" + Arrays.toString(arrayPersona));
+				//hecho con clase anonima
+				Arrays.sort(arrayPersona,  new Comparator() {
+					public int compare (Object o1, Object o2) {
+						return (int) (((Persona) o1).peso - ((Persona) o2).peso);
+					}
+					});
 				break;
 			case 9:
 				System.out.println("Mostramos del mas pequeño al mas alto");
@@ -143,15 +162,33 @@ public class UsoPersonaMain {
 					System.out.println(p.toString());
 				}
 				
+				System.out.println("Por Altura" + Arrays.toString(arrayPersona));
+				//hecho con clase anonima
+				Arrays.sort(arrayPersona,  new Comparator() {
+					public int compare (Object o1, Object o2) {
+						return (int) (((Persona) o1).altura - ((Persona) o2).altura);
+					}
+					});
 				break;
 			case 10:
 				System.out.println("Mostramos en orden por Dni");
-				
-				ComparaDni j= new ComparaDni();
-				Arrays.sort(arrayPersona, j);
+				System.out.println("Para tomar esta opcion sera necesaria primero la opcion 5");
+				ComparaDni n= new ComparaDni();
+				Arrays.sort(arrayPersona, n);
 				for(Persona p:arrayPersona) {
 					System.out.println(p.toString());
 				}
+				
+				System.out.println("Por Dni" + Arrays.toString(arrayPersona));
+				//hecho con la clase anonima
+				Arrays.sort(arrayPersona,  new Comparator() {
+					public int compare(Object o1, Object o2) {
+						Persona p1=(Persona)o1;
+						Persona p2=(Persona)o2;
+						return p1.dni.compareTo(p2.dni);
+					}
+				});
+				;
 				break;
 			case 11:
 				System.out.println("Salir");
